@@ -1,0 +1,78 @@
+<template>
+  <div class="slide">
+    <h4 class="headline">{{ headline }}</h4>
+
+    <div class="wrapper">
+      <div class="sub-wrapper">
+        <p class="title">{{ title }}</p>
+
+        <ul>
+          <li class="description" v-for="item in description">{{ item }}</li>
+        </ul>
+
+        <img class="image" width="250px" src="../assets/happy-user.png" alt="Happy user" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'slide2',
+    data() {
+      return {
+        headline: 'Perfomance goal 1.2',
+        title: 'Our goal is to ultimately make users happy. Focus on user.',
+        description: [
+          "Deliver interactive content in under 1 second. If you don't, user attention wanders, and their perception of dealing with the task is broken.",
+          "You have 100ms to respond to user input before they notice a lag. This applies to most inputs, such as clicking buttons, toggling form controls, or starting animations. This does not apply to touch drags or scrolls.",
+          "For actions that take longer than 500ms to complete, always provide feedback."
+        ]
+      }
+    }
+  }
+
+</script>
+
+
+<style scoped>
+  .headline {
+    color: #ffffff;
+    margin: 0;
+    font-size: 18px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .sub-wrapper {
+    max-width: 850px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .title {
+    line-height: 1.2em;
+    color: #2c3c42;
+    font-size: 30px;
+  }
+  
+  .description {
+    color: #576267;
+    font-size: 20px;
+    padding: 15px 0;
+    line-height: 1.4em;
+  }
+  
+  .image {
+    padding-top: 20px;
+    display: flex;
+    margin: auto;
+  }
+</style>

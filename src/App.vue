@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <v-touch v-on:swipeleft="nextSlide" v-on:swiperight="prevSlide">
-      <router-view></router-view>
+    <v-touch v-on:swipeleft="nextSlide" v-on:swiperight="prevSlide" class="touch" v-bind:class="{ scrollbar: $route.name === 'Slides' }">
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
 
       <div class="btn-wrapper" v-if="$route.name !== 'Login' && $route.name !== 'Slides'">
         <router-link to="/slides" class="btn">All</router-link>
@@ -88,6 +90,16 @@
     color: #2c3e50;
   }
 
+  .touch {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .scrollbar {
+    overflow-y: scroll;
+  }
+
   .slide {
     height: 100vh;
     width: 100vw;
@@ -162,5 +174,20 @@
       padding: 2px 0;
       line-height: 1.2em;
     }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .2s;
+  }
+
+  .fade-enter-active {
+    transition-delay: .2s;
+  }
+
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0
   }
 </style>

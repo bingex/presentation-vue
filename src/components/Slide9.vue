@@ -41,7 +41,7 @@
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .description {
     background-repeat: no-repeat;
     background-position: center;

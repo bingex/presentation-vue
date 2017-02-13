@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapperSlides">
     <div v-for="s in slides">
       <div class="single-slide" v-on:click="goSlide(s.path)">{{ s.id }}. {{ s.name }}</div>
     </div>
@@ -76,7 +76,7 @@
 </script>
 
 <style scoped>
-  .wrapper {
+  .wrapperSlides {
     max-width: 1000px;
     width: 90%;
     padding: 50px;
@@ -85,7 +85,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
+  
   .single-slide {
     margin: 20px;
     height: 100px;

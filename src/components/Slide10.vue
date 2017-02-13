@@ -2,11 +2,11 @@
   <div class="slideDevs">
     <div>
       <div class="dev" v-for="item in description">
-        <img class="image" width="150" v-bind:src="item.img" alt="item.name " />
+        <img class="image" v-bind:src="item.img" alt="item.name" />
         <p class="title">
           <span class="name">{{ item.name }}</span>
           <span class="who">{{ item.whois }}</span>
-          <span class="twitter" href="item.twitter">{{ item.twitter }}</span>
+          <span class="twitter">{{ item.twitter }}</span>
         </p>
       </div>
     </div>
@@ -78,9 +78,11 @@
   
   .who {
     color: #576267;
+    font-size: 16px;
   }
   
   .twitter {
     color: #1da1f2;
+    font-size: 16px;
   }
 </style>

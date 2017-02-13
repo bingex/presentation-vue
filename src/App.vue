@@ -10,8 +10,6 @@
         <button v-on:click="prevSlide" class="btn">Prev</button>
         <button v-on:click="nextSlide" class="btn">Next</button>
       </div>
-
-      <div v-if="connected">ERROR</div>
     </v-touch>
   </div>
 </template>
@@ -21,15 +19,9 @@
 
   export default {
     name: 'app',
-    data() {
-      return {
-        connected: this.$store.getters.connect
-      }
-    },
     sockets: {
       connect: function () {
         console.log('Socket connected.')
-        this.$store.dispatch('connect', true)
       },
       slideChange: function (val) {
         if (this.$route && val && this.$route.path !== val.data) {
@@ -97,17 +89,17 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
   }
-
+  
   .touch {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
   }
-
+  
   .scrollbar {
     overflow-y: scroll;
   }
-
+  
   .slide {
     height: 100vh;
     width: 100vw;
@@ -117,12 +109,21 @@
     background-image: url('./assets/slide.png');
   }
 
+  .headline {
+    color: #ffffff;
+    margin: 0;
+    font-size: 18px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
   .btn-wrapper {
     position: absolute;
     bottom: 10px;
     right: 10px;
   }
-
+  
   .btn {
     border: 1px solid #000000;
     padding: 5px;
@@ -134,12 +135,12 @@
     text-decoration: none;
     font-size: 14px;
   }
-
+  
   .btn:hover {
     background-color: #000000;
     color: #ffffff;
   }
-
+  
   .wrapper {
     display: flex;
     justify-content: center;
@@ -147,19 +148,19 @@
     height: 100%;
     font-family: 'Open Sans', sans-serif;
   }
-
+  
   .sub-wrapper {
     max-width: 850px;
     font-family: 'Open Sans', sans-serif;
   }
-
+  
   .title {
     line-height: 1.2em;
     color: #2c3c42;
     font-size: 30px;
     padding: 20px;
   }
-
+  
   @media (max-width: 520px) {
     .title {
       line-height: 1.2em;
@@ -168,14 +169,14 @@
       margin: 5px;
     }
   }
-
+  
   .description {
-    color: #2c3c42;
+    color: #576267;
     font-size: 20px;
     padding: 15px 0;
     line-height: 1.4em;
   }
-
+  
   @media (max-width: 520px) {
     .description {
       font-size: 14px;
@@ -183,17 +184,17 @@
       line-height: 1.2em;
     }
   }
-
+  
   .fade-enter-active,
   .fade-leave-active {
     transition-property: opacity;
     transition-duration: .2s;
   }
-
+  
   .fade-enter-active {
     transition-delay: .2s;
   }
-
+  
   .fade-enter,
   .fade-leave-active {
     opacity: 0

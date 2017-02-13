@@ -1,32 +1,23 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    loginSuccess: false,
-    connected: false
+    loginSuccess: false
   },
   mutations: {
     LOGIN(state, login) {
-      state.loginSuccess = login
-    },
-    CONNECT(state, payload) {
-      state.connected = payload
+      state.loginSuccess = login;
     }
   },
   actions: {
-    login({commit}, login) {
-      commit('LOGIN', login)
-    },
-
-    connect({commit}, value) {
-      commit('CONNECT', value)
+    login({ commit }, login) {
+      commit('LOGIN', login);
     }
   },
   getters: {
-    login: state => state.loginSuccess,
-    connect: state => state.connected
+    login: state => state.loginSuccess
   }
-})
+});

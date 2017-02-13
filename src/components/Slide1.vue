@@ -33,15 +33,6 @@
     background-image: url('../assets/clock.jpg');
   }
 
-  .headline {
-    color: #ffffff;
-    margin: 0;
-    font-size: 18px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-
   .title {
     line-height: 1.4em;
     color: #ffffff;

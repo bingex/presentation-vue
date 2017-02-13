@@ -20,7 +20,7 @@
     data() {
       return {
         headline: 'Optimizing resources',
-        title: 'he best thing you can do to improve page-load speed is to minimize the overall download size by optimizing and compressing the remaining resources.',
+        title: 'The best thing you can do to improve page-load speed is to minimize the overall download size by optimizing and compressing the remaining resources.',
         description: [
           "Minify your code.",
           "Uglify your code.",
@@ -32,20 +32,5 @@
 
 </script>
 
-
-<style scoped>
-  .headline {
-    color: #ffffff;
-    margin: 0;
-    font-size: 18px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-
-  .image {
-    padding-top: 20px;
-    display: flex;
-    margin: auto;
-  }
+<style>
 </style>

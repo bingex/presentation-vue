@@ -32,20 +32,6 @@
 
 </script>
 
+<style>
 
-<style scoped>
-  .headline {
-    color: #ffffff;
-    margin: 0;
-    font-size: 18px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-
-  .image {
-    padding-top: 20px;
-    display: flex;
-    margin: auto;
-  }
 </style>

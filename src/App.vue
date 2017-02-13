@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-touch v-on:swipeleft="nextSlide" v-on:swiperight="prevSlide">
-      <router-view v-bind:login="login"></router-view>
+      <router-view></router-view>
 
       <div class="btn-wrapper" v-if="$route.name !== 'Login' && $route.name !== 'Slides'">
         <router-link to="/slides" class="btn">All</router-link>
@@ -14,6 +14,7 @@
 
 <script>
   import router from './router/index'
+
   export default {
     name: 'app',
     sockets: {
@@ -26,13 +27,8 @@
         }
       },
       loginSuccess: function () {
-        this.login = true
+        this.$store.dispatch('login', true)
         router.push('/slides');
-      }
-    },
-    data() {
-      return {
-        login: false
       }
     },
     methods: {

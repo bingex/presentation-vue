@@ -66,17 +66,9 @@
         ]
       }
     },
-    props: {
-      login: false
-    },
     methods: {
       goSlide(path) {
         router.push(path);
-      }
-    },
-    created() {
-      if (!this.login) {
-        router.push('/login');
       }
     }
   }

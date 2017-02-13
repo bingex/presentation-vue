@@ -66,9 +66,17 @@
         ]
       }
     },
+    props: {
+      login: false
+    },
     methods: {
       goSlide(path) {
-        router.push(path)
+        router.push(path);
+      }
+    },
+    created() {
+      if (!this.login) {
+        router.push('/login');
       }
     }
   }
@@ -85,7 +93,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .single-slide {
     margin: 20px;
     height: 100px;

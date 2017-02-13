@@ -32,7 +32,7 @@
     background-blend-mode: multiply;
     background-image: url('../assets/clock.jpg');
   }
-  
+
   .headline {
     color: #ffffff;
     margin: 0;
@@ -41,19 +41,20 @@
     top: 20px;
     left: 20px;
   }
-  
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-  }
-  
+
   .title {
     line-height: 1.4em;
     color: #ffffff;
     font-size: 30px;
     max-width: 850px;
+  }
+
+   @media (max-width: 520px) {
+    .title {
+      line-height: 1.4em;
+      color: #ffffff;
+      font-size: 16px;
+      max-width: 850px;
+    }
   }
 </style>

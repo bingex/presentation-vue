@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <v-touch v-on:swipeleft="nextSlide" v-on:swiperight="prevSlide">
-      <router-view></router-view>
+      <router-view v-bind:login="login"></router-view>
 
       <div class="btn-wrapper" v-if="$route.name !== 'Login' && $route.name !== 'Slides'">
-        <button v-on:click="prevSlide">Prev</button>
-        <button v-on:click="nextSlide">Next</button>
+        <router-link to="/slides" class="btn">All</router-link>
+        <button v-on:click="prevSlide" class="btn">Prev</button>
+        <button v-on:click="nextSlide" class="btn">Next</button>
       </div>
     </v-touch>
   </div>
@@ -25,8 +26,13 @@
         }
       },
       loginSuccess: function () {
-        console.log(2)
+        this.login = true
         router.push('/slides');
+      }
+    },
+    data() {
+      return {
+        login: false
       }
     },
     methods: {
@@ -85,7 +91,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
   }
-  
+
   .slide {
     height: 100vh;
     width: 100vw;
@@ -94,10 +100,71 @@
     background-position: center;
     background-image: url('./assets/slide.png');
   }
-  
+
   .btn-wrapper {
     position: absolute;
     bottom: 10px;
     right: 10px;
+  }
+
+  .btn {
+    border: 1px solid #000000;
+    padding: 5px;
+    outline: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .sub-wrapper {
+    max-width: 850px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .title {
+    line-height: 1.2em;
+    color: #2c3c42;
+    font-size: 30px;
+    padding: 20px;
+  }
+
+  @media (max-width: 520px) {
+    .title {
+      line-height: 1.2em;
+      font-size: 16px;
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+
+  .description {
+    color: #2c3c42;
+    font-size: 20px;
+    padding: 15px 0;
+    line-height: 1.4em;
+  }
+
+  @media (max-width: 520px) {
+    .description {
+      font-size: 14px;
+      padding: 2px 0;
+      line-height: 1.2em;
+    }
   }
 </style>

@@ -6,7 +6,7 @@ import router from './router';
 import VueSocketio from 'vue-socket.io';
 import VueTouch from 'vue-touch';
 
-Vue.use(VueSocketio, 'http://192.168.0.101:8000');
+Vue.use(VueSocketio, 'http://localhost:8000');
 Vue.use(VueTouch, { name: 'v-touch' });
 
 /* eslint-disable no-new */

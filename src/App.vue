@@ -10,6 +10,8 @@
         <button v-on:click="prevSlide" class="btn">Prev</button>
         <button v-on:click="nextSlide" class="btn">Next</button>
       </div>
+
+      <div v-if="connected">ERROR</div>
     </v-touch>
   </div>
 </template>
@@ -19,9 +21,15 @@
 
   export default {
     name: 'app',
+    data() {
+      return {
+        connected: this.$store.getters.connect
+      }
+    },
     sockets: {
       connect: function () {
         console.log('Socket connected.')
+        this.$store.dispatch('connect', true)
       },
       slideChange: function (val) {
         if (this.$route && val && this.$route.path !== val.data) {
